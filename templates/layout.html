@@ -7,11 +7,11 @@
 
     <title>Jampi Dashboard</title>
 
-    <link rel="stylesheet" href="{{ url_for('static', filename='vendor/bootstrap/css/bootstrap.min.css') }}">
-    <link rel="stylesheet" href="{{ url_for('static', filename='vendor/bootstrap/css/lavish-bootstrap.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/normalize.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/foundation.min.css') }}">
 
-    <script src="{{ url_for('static', filename='vendor/jquery.min.js') }}"></script>
-    <script src="{{ url_for('static', filename='vendor/bootstrap/js/bootstrap.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/vendor/jquery.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/foundation.min.js') }}"></script>
   </head>
   <body>
     <h1>Jampi Dashboard</h1>
@@ -20,5 +20,9 @@
         {% block content %}{% endblock %}
       </div>
     </div>
+
+    <script>
+      $(document).foundation();
+    </script>
   </body>
 </html>
