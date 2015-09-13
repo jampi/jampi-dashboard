@@ -14,12 +14,45 @@
     <script src="{{ url_for('static', filename='js/foundation.min.js') }}"></script>
   </head>
   <body>
-    <h1>Jampi Dashboard</h1>
+    <nav class="top-bar" data-topbar role="navigation">
+      <ul class="title-area">
+        <li class="name">
+          <h1><a href="/">Jampi Dashboard</a></h1>
+        </li>
+        <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+      </ul>
+      <section class="top-bar-section">
+        <ul class="right">
+          <li><a href="/auth/login">Log In</a></li>
+          <li><a href="/auth/register">Registration</a></li>
+        </ul>
+      </section>
+    </nav>
+
     <div class="container">
       <div class="row">
         {% block content %}{% endblock %}
       </div>
     </div>
+
+    <footer class="row">
+      <div class="large-12 columns">
+        <hr/>
+        <div class="row">
+          <div class="large-5 columns">
+            <p>&copy; 2015. The Jampi project</p>
+          </div>
+          <div class="large-7 columns">
+            <ul class="inline-list right">
+              <li><a href="/cookies">Cookies</a></li>
+              <li><a href="/privacy-policy">Privacy Policy</a></li>
+              <li><a href="/terms-of-services">Terms of Services</a></li>
+              <li><a href="/support">Support</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
 
     <script>
       $(document).foundation();
