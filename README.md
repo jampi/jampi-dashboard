@@ -25,4 +25,4 @@ Contributions are always welcome! :)
 * Marton Tasnadi <[kistasi@jampi.hu](kistasi@jampi.hu)>
 
 ## License
-Jampi Dashboard is available under the MIT license. See the LICENSE file for more info.
+Jampi Dashboard is available under the MIT license. See the [LICENSE file](https://raw.githubusercontent.com/jampi/jampi-dashboard/master/LICENSE) for more info.
