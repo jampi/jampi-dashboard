@@ -1,0 +1,19 @@
+{% extends "layout.html" %}
+{% block content %}
+<h1>login</h1>
+
+<form action="/auth/login" method="post">
+          {{ form_login.hidden_tag() }}
+        <p>
+          {{ form_login.username.label }}
+          {{ form_login.username }}
+        </p>
+        <p>
+          {{ form_login.password.label }}
+          {{ form_login.password }}
+        </p>
+        <p>
+          {{ form_login.submit }}
+        </p>
+      </form>
+{% endblock %}
