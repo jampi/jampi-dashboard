@@ -9,7 +9,7 @@ class ErrorHandler():
     # 400
     @app.errorhandler(400)
     def error_bad_request(error):
-        return render_template('error/400.html')
+        return render_template('error/400.html', error_bad_request=True)
 
     # 404
     @app.errorhandler(404)
