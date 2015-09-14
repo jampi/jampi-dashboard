@@ -40,17 +40,19 @@ class PublicPages():
         return render_template('public/terms.html', public_terms=True)
 
     # Support
-    @app.route('/support')
+    @app.route('/support', methods=('GET', 'POST'))
     def public_support():
-        return render_template('public/support.html', public_support=True)
+        form_support = forms.SupportForm(csrf_enabled=False)
+        return render_template(
+            'public/support.html', form_support=form_support)
 
 
 class Authentication():
     # Login page
     @app.route('/auth/login', methods=('GET', 'POST'))
     def auth_login():
-        form = forms.LoginForm(csrf_enabled=False)
-        return render_template('auth/login.html', form=form)
+        form_login = forms.LoginForm(csrf_enabled=False)
+        return render_template('auth/login.html', form_login=form_login)
 
     # Log out
     @app.route('/auth/logout')
@@ -62,13 +64,14 @@ class Authentication():
     def auth_forgot_password():
         form_forgot = forms.ForgotPasswordForm(csrf_enabled=False)
         return render_template(
-            'auth/forgot_password.html', form=form)
+            'auth/forgot_password.html', form_forgot=form_forgot)
 
     # Registration page
     @app.route('/auth/register', methods=('GET', 'POST'))
     def auth_register():
         form_register = forms.RegistrationForm(csrf_enabled=False)
-        return render_template('auth/register.html', form=form)
+        return render_template(
+            'auth/register.html', form_register=form_register)
 
 if __name__ == '__main__':
     # Fancy error messages

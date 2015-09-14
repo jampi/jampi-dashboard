@@ -1,4 +1,27 @@
 {% extends "layout.html" %}
 {% block content %}
-<h2>Support</h2>
+<div class="large-12 columns">
+  <div class="row">
+    <div class="large-6 columns">
+      <h1>Support</h1>
+      <form action="/support" method="post">
+          {{ form_support.hidden_tag() }}
+
+          <label>{{ form_support.subject.label }}
+            {{ form_support.subject }}
+          </label>
+
+          <label>{{ form_support.email.label }}
+            {{ form_support.email }}
+          </label>
+
+          <label>{{ form_support.message.label }}
+            {{ form_support.message }}
+          </label>
+
+          {{ form_support.submit(class="button") }}
+      </form>
+    </div>
+  </div>
+</div>
 {% endblock %}

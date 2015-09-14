@@ -1,4 +1,43 @@
 {% extends "layout.html" %}
 {% block content %}
-<h2>register</h2>
+<div class="large-12 columns">
+  <div class="row">
+    <div class="large-6 columns">
+      <h1>Registration</h1>
+      <form action="/auth/register" method="post">
+          {{ form_register.hidden_tag() }}
+
+          <label>{{ form_register.username.label }}
+            {{ form_register.username(placeholder="Username") }}
+          </lable>
+
+          <label>{{ form_register.first_name.label }}
+            {{ form_register.first_name(placeholder="First name") }}
+          </label>
+
+          <label>{{ form_register.last_name.label }}
+            {{ form_register.last_name(placeholder="Last name") }}
+          </label>
+
+          <label>{{ form_register.email.label }}
+            {{ form_register.email(placeholder="Email address") }}
+          </label>
+
+          <label>{{ form_register.password.label }}
+            {{ form_register.password(placeholder="Password") }}
+          </label>
+
+          <label>{{ form_register.password2.label }}
+            {{ form_register.password2(placeholder="Password again") }}
+          </label>
+
+          <label>{{ form_register.accept.label }}
+            {{ form_register.accept }}
+          </label>
+
+          {{ form_register.submit(class="button") }}
+      </form>
+    </div>
+  </div>
+</div>
 {% endblock %}
