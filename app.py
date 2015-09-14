@@ -49,8 +49,8 @@ class Authentication():
     # Login page
     @app.route('/auth/login', methods=('GET', 'POST'))
     def auth_login():
-        form_login = forms.LoginForm(csrf_enabled=False)
-        return render_template('auth/login.html', form=form_login)
+        form = forms.LoginForm(csrf_enabled=False)
+        return render_template('auth/login.html', form=form)
 
     # Log out
     @app.route('/auth/logout')

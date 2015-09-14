@@ -3,17 +3,20 @@
 <h1>login</h1>
 
 <form action="/auth/login" method="post">
-          {{ form_login.hidden_tag() }}
-        <p>
-          {{ form_login.username.label }}
-          {{ form_login.username }}
-        </p>
-        <p>
-          {{ form_login.password.label }}
-          {{ form_login.password }}
-        </p>
-        <p>
-          {{ form_login.submit }}
-        </p>
-      </form>
+  <div class="row">
+    <div class="large-12">
+      {{ form.hidden_tag() }}
+
+      <label>{{ form.username.label }}
+        {{ form.username(placeholder="Username") }}
+      </lable>
+
+      <lable>{{ form.password.label }}
+        {{ form.password(placeholder="Password") }}
+      </label>
+
+      {{ form.submit }}
+    </div>
+  </div>
+</form>
 {% endblock %}
