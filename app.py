@@ -73,6 +73,49 @@ class Authentication():
         return render_template(
             'auth/register.html', form_register=form_register)
 
+
+class AdminCommon():
+    # Home
+    @app.route('/home')
+    def admin_common_home():
+        return render_template(
+            'admin_common/home.html', admin_common_home=True)
+
+
+class AdminUsers():
+    # List all users
+    @app.route('/users')
+    def admin_user_list():
+        return render_template('users/user_list.html', admin_user_list=True)
+
+    # User details
+    @app.route('/users/<int:id>')
+    def admin_user_details():
+        return render_template(
+            'users/user_details.html', admin_user_details=True)
+
+    # Edit user
+    @app.route('/users/<int:id>/edit')
+    def admin_user_edit():
+        return render_template('users/user_edit.html', admin_user_edit=True)
+
+    # Delete user
+    @app.route('/users/<int:id>/delete')
+    def admin_user_delete():
+        return render_template(
+            'users/user_delete.html', admin_user_delete=True)
+
+    # Create user
+    @app.route('/users/create')
+    def admin_user_create():
+        return render_template(
+            'users/user_create.html', admin_user_create=True)
+
+
+class AdminReports():
+    pass
+
+
 if __name__ == '__main__':
     # Fancy error messages
     app.debug = True
