@@ -2,42 +2,68 @@
 {% block content %}
 <div class="large-12 columns">
   <div class="row">
-    <div class="large-6 columns">
+    <div class="large-12 columns">
       <h1>Registration</h1>
+    </div>
+  </div>
+  <div class="row">
+    <div class="large-6 columns">
       <form action="/auth/register" method="post">
-          {{ form_register.hidden_tag() }}
-
+        {{ form_register.hidden_tag() }}
+        <fieldset>
+          <legend>Name</legend>
           <label>{{ form_register.username.label }}
             {{ form_register.username(placeholder="Username") }}
           </lable>
 
-          <label>{{ form_register.first_name.label }}
-            {{ form_register.first_name(placeholder="First name") }}
-          </label>
+          <div class="row">
+            <div class="large-6 columns">
+            <label>{{ form_register.first_name.label }}
+              {{ form_register.first_name(placeholder="First name") }}
+            </label>
+            </div>
+            <div class="large-6 columns">
+              <label>{{ form_register.last_name.label }}
+                {{ form_register.last_name(placeholder="Last name") }}
+              </label>
+            </div>
+          </div>
+        </fieldset>
 
-          <label>{{ form_register.last_name.label }}
-            {{ form_register.last_name(placeholder="Last name") }}
-          </label>
-
+        <fieldset>
+          <legend>Informations</legend>
           <label>{{ form_register.email.label }}
             {{ form_register.email(placeholder="Email address") }}
           </label>
-
-          <label>{{ form_register.password.label }}
-            {{ form_register.password(placeholder="Password") }}
+          <label>{{ form_register.phone_number.label }}
+            {{ form_register.phone_number(placeholder="Phone number") }}
           </label>
-
-          <label>{{ form_register.password2.label }}
-            {{ form_register.password2(placeholder="Password again") }}
-          </label>
-
-          <label>{{ form_register.accept.label }}
-            {{ form_register.accept }}
-          </label>
-
-          {{ form_register.submit(class="button") }}
-      </form>
+        </fieldset>
     </div>
+    <div class="large-6 columns">
+      <fieldset>
+        <legend>Password</legend>
+        <div class="row">
+          <div class="large-6 columns">
+            <label>{{ form_register.password.label }}
+              {{ form_register.password(placeholder="Password") }}
+            </label>
+          </div>
+          <div class="large-6 columns">
+            <label>{{ form_register.password2.label }}
+              {{ form_register.password2(placeholder="Password again") }}
+            </label>
+          </div>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>Terms of Services</legend>
+        {{ form_register.accept }} {{ form_register.accept.label }}
+      </fieldset>
+
+      {{ form_register.submit(class="button") }}
+    </form>
   </div>
 </div>
 {% endblock %}

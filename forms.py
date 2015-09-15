@@ -2,7 +2,7 @@ from flask.ext.wtf import Form
 from wtforms import validators
 from wtforms.fields.html5 import EmailField
 from wtforms.fields import TextAreaField, BooleanField, StringField, \
-    PasswordField, SubmitField
+    IntegerField, PasswordField, SubmitField
 
 
 class SupportForm(Form):
@@ -28,9 +28,10 @@ class RegistrationForm(Form):
     first_name = StringField('First name: ', [validators.DataRequired()])
     last_name = StringField('Last name: ', [validators.DataRequired()])
     email = EmailField('E-mail address: ', [validators.DataRequired()])
+    phone_number = IntegerField('Phone number: ', [validators.DataRequired()])
     password = PasswordField('Password: ', [validators.DataRequired()])
     password2 = PasswordField('Password again: ', [validators.DataRequired()])
     accept = BooleanField(
-        'Yeah, <a href="/privacy-policy">Privacy policy</a> is cool! ',
+        'I accept <a href="/terms-of-services">Terms of Services</a>.',
         [validators.DataRequired()])
     submit = SubmitField('Register!')
